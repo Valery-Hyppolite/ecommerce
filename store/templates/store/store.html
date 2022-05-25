@@ -1,0 +1,87 @@
+
+{% extends 'store/main.html'%}
+{% load static %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="hero">
+        <div class="left-side">
+            <span class="logo">FURNISH</span>
+
+            <div class="sm-product ">
+                <h1 class="product-index">01</h1>
+                <div class="sm-product-img-container">
+                    <img src="{% static 'img/store/images/img25.jpg'%}" class="sm-product-img" alt="">
+                </div>
+                <p class="sm-product-desc">Best Quality Furnitures at Your Door Steps</p>
+            </div>
+        </div>
+        <div class="right-side ">
+            <img src="{% static 'img/store/images/img25.jpg'%}" alt="" class="backdrop-img ">
+            <div class="content">
+                <div class="product-detail">
+                    <h1 class="product-name">Qaulity Furnitures</h1>
+                    <p class="product-desc">Best Quality Furnitures at Your Door
+                        Steps.We are the best furniture and fashion
+                        retailing for over 2 decades. Our products are made with the most dedicate touch</p>
+                    <a href="#products" class="buy-btn">Buy Now</a>
+                    <button class=""><i class=""></i></button>
+                </div>
+                <div class="product-img-container">
+                    <img src="{% static 'img/store/images/img25.jpg'%}" class="product-img" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-display">
+        <div class="imgs-product">
+            <img class="img1" src="{% static 'img/store/images/img1.jpg'%}" alt="">
+            <img class="img2" src="{% static 'img/store/images/img7.jpg'%}" alt="">
+        </div>
+        <div class="desc">
+            <h1>Timeless pieces</h1>
+            <p>A well-executed concept can result in a timeless piece of
+                furniture that never goes out of style. </p>
+        </div>
+    </div>
+    <section class="card-products">
+        <div class="title">
+            <h1>Shop your Vaforites</h1>
+            <p>Elang Quality & Top Noch at every corners</p>
+        </div>
+
+        <div id="products" class="cards">
+            {% for product in products %}
+            <div class="card">
+                {% if product.image %}
+                <img src="{{product.image.url}}" alt="">
+                {% endif %}
+                <card class="card-body">
+                    <h1 class="card-title">{{product.name}}</h1>
+                    <p class="card-sub-title"> <br><strong>{{product.price|floatformat:2}}</strong></p>
+                    <p class="card-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium al</p>
+                    <button data-product={{product.id}} data-action="add" class="cart-btn add-btn update-cart">add to cart</button>
+                </card>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <footer>
+        <div class="footer-text">
+            <h1>Dedicated to changing how the world works and designing your home  with the most perfect pieces.</h1>
+        </div>
+        <ul class="home-footer">
+            <li><a href="">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </footer>
+    <script>
+        let mediaUrl = '{% static "img/images" %}'
+    </script>
+
+    <script src="{% static 'app-js/index.js' %}"></script>
+
+
+{% endblock content %}

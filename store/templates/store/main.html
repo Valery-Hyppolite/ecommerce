@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> -->
+    
+    <title>Ecommerce</title>
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Righteous&display=swap"
+        rel="stylesheet">
+    <!-- FONT-AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- LOCAL STYLE CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %} " />
+    <link rel="stylesheet" href="{% static 'css/media.css' %} " />
+
+
+    <script type="text/javascript">
+          let user = '{{request.user}}';
+
+          function getToken(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getToken('csrftoken');
+
+        //create a session cookie that allow data to be save on the proser for days.
+        function getCookie(name){
+            let cookieArr = document.cookie.split(";");
+            for(let i = 0; i <  cookieArr.length; i++){
+                let cookiePair = cookieArr[i].split("=");
+                if(name == cookiePair[0].trim()){
+                    return decodeURIComponent(cookiePair[1]);
+            }
+        }
+        return null
+    }
+    let cart  = JSON.parse(getCookie('cart'));
+    if(cart == undefined){
+        cart = {}
+        console.log('cart was created');
+        document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/";
+    }
+    console.log('cart', cart);
+        
+    </script>
+    
+    <title>Ecommerce Funiture Website</title>
+    
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/main.css' %}"> -->
+</head>
+<body>
+      {% include 'store/nav.html' %}
+    <div class="container">
+    {% block content %}
+
+    {% endblock%}
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'app-js/cart.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app-js/checkout.js' %}"></script>
+</body>
+</html>

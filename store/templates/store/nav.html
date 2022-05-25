@@ -1,0 +1,35 @@
+{% load static %}
+
+<div class="topnav" id="myTopnav">
+  <a href="{% url 'store' %}" class="active">FURNURCH</a>
+  <a href="#login">Login</a>
+  <a href="#contact">Contact</a>
+  <a href="{% url 'cart' %}">
+    <img id="cart-icon" src="https://img.icons8.com/external-icongeek26-outline-icongeek26/64/000000/external-cart-ecommerce-icongeek26-outline-icongeek26.png"/><span id="cart-total">{{cart_items}}</span>
+  </a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+  function myFunction() {
+    let x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("myTopnav").style.top = "0";
+    } else {
+      document.getElementById("myTopnav").style.top = "-50px";
+    }
+  }
+  </script>
+  

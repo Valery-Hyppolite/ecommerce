@@ -1,0 +1,132 @@
+/* ========================HOME -- SECTION=================== */
+@media screen and (max-width: 1280px) {
+    .left-side {
+        display: none;
+    }
+    .right-side{
+        width: 100vw;
+    }
+
+    footer{
+       margin-top: 3rem;
+    }
+
+    .footer-text h1 {
+        font-size: 2rem;
+    }
+
+    .home-footer a{
+        font-size: 1rem;
+        line-height: 3rem;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .footer-text h1{
+        font-size: 1.5rem;
+        line-height:4rem ;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .product-name {
+        font-size: 5rem;
+        line-height: 7rem;
+    }
+
+    .product-desc{
+        font-size: 1.2rem;
+    }
+    .desc p{
+        font-size: 1.2rem;
+    }
+
+    .backdrop-img{
+        width: 40vw;
+    }
+
+    .product-img-container{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .product-name {
+        background: chocolate;
+        font-size: 5rem;
+        line-height: 5rem;
+       padding: 2rem 0rem;
+       margin: 4rem 0rem 1rem 0rem;
+    }
+
+    .product-desc{
+        font-size: 0.8rem;
+    }
+    .desc p{
+        font-size: 1rem;
+    }
+
+    .desc h1 {
+        font-size: 3rem;
+    }
+
+    .title h1{
+        font-size: 3rem;
+    }
+
+    .title {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .backdrop-img{
+        display: none;
+    }
+    .content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 2rem 1rem;
+    }
+    .product-detail {
+        width: 100%;
+    }
+
+    .product-img-container{
+        width: 100%;
+        min-height: 20vw ;
+        margin: 1rem 1rem;
+        background: chocolate;
+        
+    }
+
+    .product-img{
+        width: 90%;
+        height: 80%;
+    }
+
+    .footer-text {
+        width: 100%;
+    }
+
+    .footer-text h1 {
+        font-size: 1rem;
+        line-height: 3rem;
+    }
+
+    .home-footer a {
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================CHECKOUT-PAGE================== */
+@media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+  }
