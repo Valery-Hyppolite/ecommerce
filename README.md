@@ -1,5 +1,5 @@
 # e-Furnish: https://e-furnish.herokuapp.com
-An ecommerce website that allows users to add/remove products to cart and submit orders.This website was made with Django and is deployed on Heroku. PostSql database is use to store all data and AWS s3 to store images. 
+An ecommerce application that customers may use to purchase products. Customers can explore the product page, add to cart and purchase products through the check out page. This applicationn was deployed with Heroku and uses PostgreSQL to store products and customers' data and AWS s3 to store images. 
 
 ![ec1](https://user-images.githubusercontent.com/83102811/183741024-7ad4efa5-f212-4d21-94fd-78c46bc46479.png)
 
