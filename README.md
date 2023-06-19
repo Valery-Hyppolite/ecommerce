@@ -1,5 +1,7 @@
 # e-Furnish: https://e-furnish.herokuapp.com
-An ecommerce application that customers may use to purchase products. Customers can explore the product page, add to cart and purchase products through the check out page. This applicationn was deployed with Heroku and uses PostgreSQL to store products and customers' data and AWS s3 to store images. 
+Introducing our advanced inventory management system designed to efficiently track products, orders, and customers. With real-time updates, you can stay on top of your inventory, orders, and profits effortlessly. Our system automatically calculates profits and losses, giving you valuable insights into the financial performance of each product and your overall store. Seamlessly packaged with docker-compose, our web application is deployed on AWS EC2 within a secure Virtual Private Cloud (VPC) environment.
+
+In progress
 
 ![ec1](https://user-images.githubusercontent.com/83102811/183741024-7ad4efa5-f212-4d21-94fd-78c46bc46479.png)
 
